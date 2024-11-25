@@ -1,17 +1,9 @@
-import { useState, useEffect } from 'react'
-const initialFormData =
-{
-    title: '',
-    content: '',
-    image: '',
-    tags: [],
 
-}
 
 const tagList = ["Dolci al sale", "Primi piatti", "Ricette cannibali", "Ricette nucleari",]
 
-export default function InputForm({ handleFormSubmit, handleFormField, handleChecks }) {
-    const [formData, setFormData] = useState(initialFormData)
+export default function InputForm({ handleFormSubmit, handleFormField, handleChecks, formData }) {
+
     return (
         <>
             {/* Card per il form */}

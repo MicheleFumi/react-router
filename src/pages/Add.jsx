@@ -16,7 +16,7 @@ export default function () {
     function handleFormSubmit(e) {
         e.preventDefault()
         console.log(formData);
-
+        alert('Ricetta aggiunta! Visita la home per vederla!')
         const newRecipe = {
             id: Date.now(),
             ...formData
@@ -32,13 +32,14 @@ export default function () {
             .then(res => {
                 console.log('success!:', res);
                 setBlogDataApi(res)
+
             })
     }
 
 
     function handleFormField(e) {
         const { name, value, } = e.target;
-        console.log(name);
+        console.log(formData);
         setFormData({
             ...formData,
             [name]: value,
@@ -66,7 +67,7 @@ export default function () {
     return (
         <>
             <div className="container">
-                <InputForm handleFormSubmit={handleFormSubmit} handleFormField={handleFormField} handleChecks={handleChecks} />
+                <InputForm handleFormSubmit={handleFormSubmit} handleFormField={handleFormField} handleChecks={handleChecks} formData={formData} />
             </div>
 
         </>
