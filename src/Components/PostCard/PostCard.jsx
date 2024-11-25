@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react'
 
-export default function PostCard({ handleRemoveTitle }) {
+export default function PostCard({ blogDataApi, handleRemoveTitle, url }) {
 
-    const [blogDataApi, setBlogDataApi] = useState({})
 
 
 

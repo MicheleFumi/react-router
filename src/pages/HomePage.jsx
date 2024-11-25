@@ -119,7 +119,7 @@ export default function () {
 
                     <h2 className="my-4">Altre Ricette</h2>
 
-                    <PostCard blogDataApi={blogDataApi} handleRemoveTitle={handleRemoveTitle} />
+                    <PostCard blogDataApi={blogDataApi} handleRemoveTitle={handleRemoveTitle} url={url} />
                 </div>
 
             </main>
