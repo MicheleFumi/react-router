@@ -16,7 +16,7 @@ export default function InputForm({ handleFormSubmit, handleFormField, handleChe
         <>
             {/* Card per il form */}
 
-            <div className="card shadow-sm mb-4">
+            <div className="card shadow-sm mb-4 mt-4">
                 <div className="card-header">
                     <h3>Aggiungi una nuova ricetta</h3>
                 </div>

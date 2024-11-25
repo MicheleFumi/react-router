@@ -1,9 +1,45 @@
 import { useState, useEffect } from 'react'
 
-export default function PostCard({ blogDataApi, handleRemoveTitle, url }) {
+const url = 'http://localhost:3000'
+const endpoint = '/post/'
+
+export default function PostCard() {
+
+    const [blogDataApi, setBlogDataApi] = useState({})
+
+    function fetchData() {
+        fetch(`${url}${endpoint}`)
+            .then(resp => resp.json())
+            .then(data => {
+                console.log(data);
+
+                setBlogDataApi(data)
+            }
+            )
+    }
+    useEffect(fetchData, [])
 
 
+    function handleRemoveTitle(e) {
+        e.preventDefault()
 
+        const titleToRemove = e.target.getAttribute('data-id')
+        console.log(titleToRemove);
+
+
+        fetch(`${url}${endpoint}${titleToRemove}`, {
+            method: 'DELETE',
+            headers: {
+                'content-Type': 'application/json'
+            }
+        })
+            .then(res => res.json())
+            .then(res => {
+                console.log(res);
+                setBlogDataApi(res)
+            })
+
+    }
 
 
     return (

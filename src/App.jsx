@@ -4,6 +4,7 @@ import HomePage from './pages/HomePage'
 import About from './pages/About'
 import Contacts from './pages/Contacts'
 import DefaultLayout from './pages/DefaultLayout'
+import Add from './pages/Add'
 
 function App() {
 
@@ -13,6 +14,7 @@ function App() {
         <Routes>
           <Route element={<DefaultLayout />}>
             <Route path='/' element={<HomePage />} />
+            <Route path='/add' element={<Add />} />
             <Route path='/contacts' element={<Contacts />} />
             <Route path='/about' element={<About />} />
           </Route>
