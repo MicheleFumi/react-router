@@ -56,9 +56,6 @@ export default function AppMain() {
 
     }
 
-
-
-
     function handleRemoveTitle(e) {
         e.preventDefault()
 
@@ -83,6 +80,7 @@ export default function AppMain() {
 
 
     }
+
     /* 
         function handleChangeTitle(e) {
             const selectedTitle = e.target.getAttribute('data-id')
@@ -117,6 +115,7 @@ export default function AppMain() {
 
 
     }
+
     function handleChecks(e) {
         const { value, checked } = e.target;
         if (checked) {
