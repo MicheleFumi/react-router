@@ -1,4 +1,12 @@
-export default function PostCard() {
+import { useState, useEffect } from 'react'
+
+export default function PostCard({ handleRemoveTitle }) {
+
+    const [blogDataApi, setBlogDataApi] = useState({})
+
+
+
+
     return (
         <div className="row">
             {blogDataApi.data ? (
