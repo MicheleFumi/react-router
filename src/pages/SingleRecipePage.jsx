@@ -15,9 +15,8 @@ export default function SingleRecipe() {
                 .then(res => res.json())
                 .then(data => {
 
-                    const keys = Object.keys(data)
                     console.log(data);
-                    if (keys.includes('error')) {
+                    if (!data.data) {
                         // redirct to a 404
                         navigate('/404')
 
@@ -57,7 +56,7 @@ export default function SingleRecipe() {
                                         </p>
                                         <div className="d-flex justify-content-between">
                                             <div className="tags">{post.tags.join(", ")} </div>
-                                            <Link to='/' className="btn btn-primary" >Back to Home</Link>
+                                            <Link to='/recipes' className="btn btn-primary" >Torna alle ricette</Link>
                                         </div>
 
                                     </div>
