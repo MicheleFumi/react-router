@@ -17,6 +17,7 @@ export default function PostCard() {
                 setBlogDataApi(data)
             }
             )
+
     }
     useEffect(fetchData, [])
 
@@ -43,13 +44,14 @@ export default function PostCard() {
     }
 
 
+
     return (
         <div className="row">
             {blogDataApi.data ? (
                 blogDataApi.data.map((post, index) => (
                     <div className="col-md-6 col-lg-4 mb-4" key={index}>
                         <div className="card shadow-sm h-100 card-fixed-height">
-                            <Link to={`${url}${endpoint}${post.id}`}>
+                            <Link to={`/recipes/${post.id}`}>
 
                                 <img
                                     src={`${url}${post.image}`}

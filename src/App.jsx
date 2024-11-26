@@ -1,12 +1,13 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
-import HomePage from './pages/HomePage'
+import RecipesPage from './pages/RecipesPages'
 import About from './pages/About'
 import Contacts from './pages/Contacts'
 import DefaultLayout from './pages/DefaultLayout'
-import Add from './pages/Add'
-import SingleRecipe from './pages/SingleRecipe'
+import AddPage from './pages/AddPage'
+import SingleRecipePage from './pages/SingleRecipePage'
 import NotFound from './pages/NotFound'
+import HomePage from './pages/HomePage'
 function App() {
 
   return (
@@ -15,10 +16,15 @@ function App() {
         <Routes>
           <Route element={<DefaultLayout />}>
             <Route path='/' element={<HomePage />} />
-            <Route path='/add' element={<Add />} />
             <Route path='/contacts' element={<Contacts />} />
             <Route path='/about' element={<About />} />
-            <Route path=':id' element={<SingleRecipe />} />
+            <Route path='/add' element={<AddPage />} />
+
+            <Route path='/recipes'>
+              <Route index element={<RecipesPage />} />
+              <Route path=':id/' element={<SingleRecipePage />} />
+            </Route>
+
             <Route path='*' element={<NotFound />} />
           </Route>
         </Routes>
