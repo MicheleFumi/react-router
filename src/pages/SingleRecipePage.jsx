@@ -7,7 +7,6 @@ export default function SingleRecipe() {
     const [post, setPost] = useState(null)
     const { id } = useParams()
     const url = `http://localhost:3000/post/${id}`
-    const [activePage, setActivePage] = useState(0)
 
 
     useEffect(
