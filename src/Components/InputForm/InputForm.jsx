@@ -1,8 +1,9 @@
-
+import { Link } from "react-router-dom"
 
 const tagList = ["Dolci al sale", "Primi piatti", "Ricette cannibali", "Ricette nucleari",]
 
 export default function InputForm({ handleFormSubmit, handleFormField, handleChecks, formData }) {
+
 
     return (
         <>
@@ -76,9 +77,7 @@ export default function InputForm({ handleFormSubmit, handleFormField, handleChe
                                 ))}
                             </div>
                         </div>
-                        <button className="btn btn-primary w-100" type="submit">
-                            <i className="bi bi-plus"></i> Aggiungi Ricetta
-                        </button>
+                        <Link to='/recipes' className="btn btn-primary text-center" >Aggiungi e torna alle ricette</Link>
                     </form>
                 </div>
             </div>

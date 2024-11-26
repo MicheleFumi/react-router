@@ -17,7 +17,6 @@ export default function PostCard() {
                 setBlogDataApi(data)
             }
             )
-
     }
     useEffect(fetchData, [])
 

@@ -7,6 +7,7 @@ export default function SingleRecipe() {
     const [post, setPost] = useState(null)
     const { id } = useParams()
     const url = `http://localhost:3000/post/${id}`
+    const [activePage, setActivePage] = useState(0)
 
 
     useEffect(
@@ -24,7 +25,6 @@ export default function SingleRecipe() {
                         // check if there are no errors 
                         // then set the pizza
                         setPost(data.data)
-                        console.log(data.data);
 
 
                     }
@@ -38,6 +38,9 @@ export default function SingleRecipe() {
         },
 
         [])
+
+
+
     return (
         <>
             {post ? (
@@ -47,7 +50,7 @@ export default function SingleRecipe() {
                     <section className="pizza_details">
                         <div className="container">
                             <div className="card my-5 border-0 rounded-4 shadow-lg">
-                                <img className="card-img-top rounded-4" src={`http://localhost:3000/${post.image}`} alt="" />
+                                <img className="card-img-top-detail rounded-4 img-height" src={`http://localhost:3000/${post.image}`} alt="" />
                                 <div className="card-body">
                                     <h3>{post.title} </h3>
                                     <div>
@@ -57,6 +60,9 @@ export default function SingleRecipe() {
                                         <div className="d-flex justify-content-between">
                                             <div className="tags">{post.tags.join(", ")} </div>
                                             <Link to='/recipes' className="btn btn-primary" >Torna alle ricette</Link>
+
+
+
                                         </div>
 
                                     </div>

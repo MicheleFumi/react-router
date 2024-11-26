@@ -13,11 +13,13 @@ const initialFormData =
 }
 export default function () {
     const [formData, setFormData] = useState(initialFormData)
+    const [blogDataApi, setBlogDataApi] = useState([]);
 
     function handleFormSubmit(e) {
         e.preventDefault()
         console.log(formData);
         alert('Ricetta aggiunta! Visita la home per vederla!')
+
         const newRecipe = {
             id: Date.now(),
             ...formData
@@ -32,7 +34,7 @@ export default function () {
             .then(res => res.json())
             .then(res => {
                 console.log('success!:', res);
-                setBlogDataApi(res)
+                setBlogDataApi(prevData => [...prevData, res])
 
             })
     }
