@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 
 const url = 'http://localhost:3000'
 const endpoint = '/post/'
@@ -48,12 +49,15 @@ export default function PostCard() {
                 blogDataApi.data.map((post, index) => (
                     <div className="col-md-6 col-lg-4 mb-4" key={index}>
                         <div className="card shadow-sm h-100 card-fixed-height">
-                            <img
-                                src={`${url}${post.image}`}
-                                className="card-img-top"
-                                alt={post.title}
+                            <Link to={`${url}${endpoint}${post.id}`}>
 
-                            />
+                                <img
+                                    src={`${url}${post.image}`}
+                                    className="card-img-top"
+                                    alt={post.title}
+
+                                />
+                            </Link>
                             <button
                                 className="btn btn-danger btn-sm"
                                 onClick={handleRemoveTitle}

@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 const url = 'http://localhost:3000'
 const endpoint = '/post/'
 import InputForm from '../Components/InputForm/InputForm'
+
 const initialFormData =
 {
     title: '',
